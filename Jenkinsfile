@@ -28,6 +28,9 @@ pipeline {
                     }
                     VERSION = properties.version
                     currentBuild.displayName += " - " + VERSION
+                    if (!VERSION.endsWith("TEST")) {
+                        currentBuild.rawBuild.keepLog(true)
+                    }
                 }
             }
             post {
