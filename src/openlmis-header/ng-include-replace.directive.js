@@ -42,7 +42,7 @@
         };
         return directive;
 
-        function link(scope, element) {
+        function link(scope, element, attrs) {
             element.replaceWith(element.children());
         }
     }
