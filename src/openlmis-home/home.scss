@@ -1,4 +1,5 @@
 $image-height: 136px;
+$small: 480px;
 
 .home-page{
   @extend .page-hero;
@@ -11,9 +12,15 @@ $image-height: 136px;
     bottom: 0.5em;
     left: 0em;
     background: url(openlmis-home/home-background.png) no-repeat right bottom;
+    @media screen and (max-width: $small) {
+      background-size: 1200%
+    }
   }
 }
 
 .home-page > h2{
   white-space: pre-line;
+  @media screen and (max-width: $small) {
+    font-size:16px;
+  }
 }
