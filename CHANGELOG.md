@@ -3,7 +3,6 @@
 
 Improvements:
 * [OLMIS-7321](https://openlmis.atlassian.net/browse/OLMIS-7321): Improved the home page screen to be responsive.
-* [OLMIS-7323](https://openlmis.atlassian.net/browse/OLMIS-7323): Improved pages to be responsive on low screen resolutions
 
 5.1.9 / 2021-05-27
 ==================
