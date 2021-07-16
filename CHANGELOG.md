@@ -2,7 +2,7 @@
 ==================
 
 Improvements:
-* [OLMIS-7321](https://openlmis.atlassian.net/browse/OLMIS-7321): Improved the home page screen to be responsive.
+* [OLMIS-7321](https://openlmis.atlassian.net/browse/OLMIS-7321): Improved the home page screen to be responsive with standard breakpoints.
 
 5.1.9 / 2021-05-27
 ==================
