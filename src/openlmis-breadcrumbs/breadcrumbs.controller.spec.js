@@ -57,7 +57,7 @@ describe('BreadcrumbsController', function() {
         };
 
         var states = this.states;
-        spyOn(this.$state, 'get').andCallFake(function(name) {
+        spyOn(this.$state, 'get').and.callFake(function(name) {
             return states[name];
         });
 

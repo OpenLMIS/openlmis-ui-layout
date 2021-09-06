@@ -56,7 +56,7 @@ describe('serverErrorHandler', function() {
     });
 
     it('should reject promise with server response', function() {
-        spyOn(this.$q, 'reject').andCallThrough();
+        spyOn(this.$q, 'reject').and.callThrough();
 
         this.serverErrorHandler.responseError(this.response);
         this.$timeout.flush();

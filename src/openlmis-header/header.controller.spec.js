@@ -39,8 +39,8 @@ describe('HeaderController', function() {
             username: 'user2'
         };
 
-        spyOn(this.authorizationService, 'isAuthenticated').andReturn(true);
-        spyOn(this.authorizationService, 'getUser').andReturn(this.user1);
+        spyOn(this.authorizationService, 'isAuthenticated').and.returnValue(true);
+        spyOn(this.authorizationService, 'getUser').and.returnValue(this.user1);
 
         this.$controller('HeaderController', {
             $scope: this.$scope
@@ -56,7 +56,7 @@ describe('HeaderController', function() {
         });
 
         it('should update user information', function() {
-            this.authorizationService.getUser.andReturn(this.user2);
+            this.authorizationService.getUser.and.returnValue(this.user2);
             this.$scope.$apply();
 
             expect(this.$scope.user).toBe(this.user2.username);
