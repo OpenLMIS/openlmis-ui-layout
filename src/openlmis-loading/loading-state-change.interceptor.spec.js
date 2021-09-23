@@ -73,8 +73,8 @@ describe('openlmis-loading.interceptor:loadingStateChange', function() {
         this.$rootScope.$apply();
 
         expect(this.$state.go).toHaveBeenCalled();
-        expect(this.$state.go.calls.mostRecent().args[0]).toBe('nextState');
-        expect(this.$state.go.calls.mostRecent().args[1]).toBe('nextParameters');
+        expect(this.$state.go.mostRecentCall.args[0]).toBe('nextState');
+        expect(this.$state.go.mostRecentCall.args[1]).toBe('nextParameters');
     });
 
     it('will reload state only once, regardless of how many times "openlmis-loading.stop" or "openlmis-loading.start"' +
@@ -91,8 +91,8 @@ describe('openlmis-loading.interceptor:loadingStateChange', function() {
         this.$rootScope.$apply();
 
         expect(this.$state.go).toHaveBeenCalled();
-        expect(this.$state.go.calls.count()).toBe(1);
-        expect(this.$state.go.calls.mostRecent().args[0]).toBe('lastState');
+        expect(this.$state.go.calls.length).toBe(1);
+        expect(this.$state.go.mostRecentCall.args[0]).toBe('lastState');
     });
 
 });
