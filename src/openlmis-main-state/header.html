@@ -1,6 +1,23 @@
 <ng-include src="'openlmis-header/header.html'"></ng-include>
-<div class="navbar">
-    <openlmis-navigation root-state="openlmis" class="nav navbar-nav"></openlmis-navigation>
-    <openlmis-logout class="navbar-right"></openlmis-logout>
+<div class="d-none d-md-flex navbar">
+    <openlmis-navigation root-state="openlmis" class="nav navbar-nav mr-auto"></openlmis-navigation>
     <openlmis-locale class="navbar-right locale-container"></openlmis-locale>
+    <openlmis-logout class="navbar-right"></openlmis-logout>
+</div>
+
+<div class="d-block d-md-none navbar">
+    <nav class="d-flex d-md-none navbar navbar-light" role="navigation" close-on-click="isNavCollapsed">
+        <div class="navbar-header mr-auto" aria-controls="navbarToggler">
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <openlmis-navigation root-state="openlmis" class="nav navbar-nav"></openlmis-navigation>
+        </div>
+        <div class="mobile-locale-buttons ml-auto d-flex">
+            <openlmis-locale class="navbar-right"></openlmis-locale>
+            <openlmis-logout class="navbar-nav"></openlmis-logout>
+        </div>
+    </nav>
 </div>

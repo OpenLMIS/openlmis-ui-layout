@@ -63,3 +63,71 @@ body > header {
 .status-offline {
     @extend a.is-offline;
 }
+
+.navbar {
+    width: 100%;
+
+    .navbar-right {
+        float: right !important;
+        @media screen and (max-width: 568px) {
+            margin-left: 1%;
+        }
+    }
+
+    .nav.navbar-nav {
+        flex-direction: row;
+        @media screen and (max-width: 768px) {
+            flex-direction: row;
+        }
+    }
+    
+    .mobile-locale-buttons {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .collapse {
+        display: block;
+    }
+
+    .navbar-nav .dropdown-menu{
+        @media screen and (max-width: 768px) {
+            position: relative;
+        }
+    }
+ 
+}
+
+header > .navbar {
+    @media screen and (max-width: 320px) {
+        padding: 0% 1% !important;
+    }
+    .navbar-collapse.collapse.show {
+        display: block;
+    }
+}
+
+header > .navbar a {
+    @media screen and (max-width: $res-md) {
+        color: $black !important;
+    }
+}
+
+.navbar-collapse.collapse.show {
+    display: block;
+}
+
+.navbar-collapse.collapse {
+    display: block;
+}
+
+.collapse {
+    display: block;
+}
+
+.mobile-locale-buttons {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
