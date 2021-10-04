@@ -5,9 +5,7 @@ Improvements:
 * [OLMIS-7342](https://openlmis.atlassian.net/browse/OLMIS-7342): Create navigation bar and make it responsive.
 * [OLMIS-7321](https://openlmis.atlassian.net/browse/OLMIS-7321): Improved the home page screen to be responsive with standard breakpoints.
 * [OLMIS-7314](https://openlmis.atlassian.net/browse/OLMIS-7314): Update scss files to enable webpack build.
-
-Bug fixes:
-* [OLMIS-7314](https://openlmis.atlassian.net/browse/OLMIS-7314): Fix tests after karma upgrade.
+* [OLMIS-7379](https://openlmis.atlassian.net/browse/OLMIS-7379): Add support for viewport
 
 5.1.9 / 2021-05-27
 ==================
