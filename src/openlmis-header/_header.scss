@@ -16,7 +16,9 @@ body > header {
     flex-wrap: nowrap;
     padding: 1em 2em;
     z-index: 1; // to be above navbar
-
+    @media screen and (max-width: $res-xs) {
+        padding: 1em 0.5em;
+    }
     > * {
         flex: 0 0 auto;
         align-items: flex-end;
@@ -32,6 +34,12 @@ body > header {
         flex-grow: 1;
         font-size: $font-size-openlmis-header-title;
         height: $font-size-openlmis-header-title;
+        @media screen and (max-width: $res-sm) {
+            background-size: auto 24px;
+        }
+        @media screen and (max-width: $res-xs) {
+            background-size: auto 20px;
+        }
     }
 }
 
@@ -45,10 +53,8 @@ body > header {
 
 .openlmis-header-actions {
     > * {
-        align-items: center;
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column-reverse;
+        justify-content: flex-end;
         > * {
             flex: 0 0 auto;
             margin: 0px;
@@ -58,10 +64,35 @@ body > header {
             }
         }
     }
+
+    a {
+        @media screen and (max-width: $res-sm) {
+            margin-right: 0em;
+        }
+    }
 }
 
 .status-offline {
     @extend a.is-offline;
+    margin-right: 0;
+    span {
+        @media screen and (max-width: $res-sm) {
+            display: none;
+        }
+    }
+}
+
+.openlmis-header-info {
+    display: flex;
+    flex-direction: row;
+    > * {
+        flex: 0 0 auto;
+    }
+    .openlmis-app-cache{
+        @media screen and (max-width: $res-sm) {
+            display: none;
+        }
+    }
 }
 
 .navbar {
@@ -82,23 +113,38 @@ body > header {
 }
 
 header > .navbar {
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: $res-xs) {
         padding: 0% 1% !important;
+    }
+    @media screen and (max-width: $res-xs) {
+        padding: 0% 1% !important;
+    }
+    
+}
+
+header > .navbar.display-in-browser {
+    display: block;
+    @media screen and (max-width: ($res-md)) {
+        display: none;
     }
 }
 
 header > .navbar.display-in-browser {
     display: block;
-    @media screen and (max-width: $res-md) {
+    @media screen and (max-width: ($res-md)) {
         display: none !important;
     }
 }
 
 header > .navbar.display-in-mobile {
     display: none;
-    @media screen and (max-width: $res-md) {
+    @media screen and (max-width: $res-md - 1px) {
         display: flex;
     }
+}
+
+.navbar {
+    margin: 0em;
 }
 
 .navbar-header {
@@ -120,6 +166,7 @@ header > .navbar.display-in-mobile {
         padding: 0px 20px;
     }
 }
+
 header > .navbar .navbar-nav > li > a {
     color: $white;
     font-weight: bold;
