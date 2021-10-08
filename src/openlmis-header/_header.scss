@@ -131,7 +131,7 @@ header > .navbar.display-in-browser {
 
 header > .navbar.display-in-browser {
     display: block;
-    @media screen and (max-width: ($res-md)) {
+    @media screen and (max-width: ($res-md + 1px)) {
         display: none !important;
     }
 }
