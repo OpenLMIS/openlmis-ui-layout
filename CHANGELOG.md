@@ -7,6 +7,7 @@ Improvements:
 * [OLMIS-7321](https://openlmis.atlassian.net/browse/OLMIS-7321): Improved the home page screen to be responsive with standard breakpoints.
 * [OLMIS-7314](https://openlmis.atlassian.net/browse/OLMIS-7314): Update scss files to enable webpack build.
 * [OLMIS-7379](https://openlmis.atlassian.net/browse/OLMIS-7379): Add support for viewport
+* [OLMIS-7315](https://openlmis.atlassian.net/browse/OLMIS-7315): Add manifest file to the header.
 
 5.1.9 / 2021-05-27
 ==================
