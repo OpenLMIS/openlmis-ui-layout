@@ -23,6 +23,14 @@
         <link rel="stylesheet" href="openlmis.css">
         <script type="text/javascript" src="openlmis.js" async="true"></script>
         <link rel="manifest" href="manifest.json" />
+        <script>
+            var meta = document.createElement('meta');
+            if (window.matchMedia('(display-mode: standalone)').matches || window.matchMedia('(display-mode: minimal-ui)').matches){
+                meta.name="viewport" 
+                meta.content="width=device-width, initial-scale=1"
+                document.getElementsByTagName('head')[0].appendChild(meta);
+            }
+        </script>
         <script type="text/javascript">
             function removeNoJS(){
                 document.body.removeAttribute('class', '');
