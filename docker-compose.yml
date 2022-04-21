@@ -16,11 +16,11 @@ services:
       - auth-ui
       - ui-components
   auth-ui:
-    image: openlmis/auth-ui:6.2.8-RC2
+    image: openlmis/auth-ui:6.2.8
     volumes:
       - '/openlmis-auth-ui'
   ui-components:
-    image: openlmis/ui-components:7.2.7-RC2
+    image: openlmis/ui-components:7.2.7
     volumes:
       - '/openlmis-ui-components'
   image:
