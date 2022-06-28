@@ -1,3 +1,9 @@
+5.2.2 / WIP
+==================
+
+Improvements:
+* [MW-1137](https://openlmis.atlassian.net/browse/MW-1137): Refactor menu creation and main component for React pages.
+
 5.2.0 / 2021-10-28
 ==================
 
