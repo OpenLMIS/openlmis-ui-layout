@@ -53,11 +53,11 @@ const ReactApp = ({ olmisRoutes, olmisReducers }) => {
     }, [olmisRoutes]);
 
     useEffect(() => {
-        const reducersPromises = olmisReducers.map(reducer => (
+        const reducersPromises = olmisReducers.map(reducerConfig => (
             import(
                 /* webpackMode: "eager" */
-                `../${reducer.filepath}`
-                ).then(r => ({ reducer: r.default, name: reducer.name }))
+                `../${reducerConfig.filepath}`
+                ).then(reducer => ({ reducer: reducer.default, name: reducerConfig.name }))
         ));
 
         Promise.all(reducersPromises)
