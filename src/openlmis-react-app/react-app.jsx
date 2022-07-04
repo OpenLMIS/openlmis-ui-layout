@@ -14,7 +14,8 @@
  */
 
 import React, { lazy, useEffect, useState } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { unstable_HistoryRouter as Router, Route, Routes } from 'react-router-dom';
+import { useHashHistory } from "use-hash-history";
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
@@ -40,9 +41,7 @@ const ReactApp = ({ olmisRoutes, olmisReducers }) => {
                 olmisRoutes.map(async route => {
                     const View = await importRoutes(route);
                     return (
-                        <Route key={_.uniqueId('route-')} path={route.path}>
-                            <View />
-                        </Route>
+                        <Route key={_.uniqueId('route-')} path={route.path} element={<View />} />
                     );
                 });
 
@@ -69,18 +68,19 @@ const ReactApp = ({ olmisRoutes, olmisReducers }) => {
             });
     }, [olmisReducers]);
 
+    const history = useHashHistory({ hashRoot: "!/" });
+
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={store.persistor}>
                 <div className="page-responsive">
                     <React.Suspense fallback='Loading routes...'>
                         <Router
-                            basename="/"
-                            hashType="hashbang"
+                            history={history}
                         >
-                            <Switch>
+                            <Routes>
                                 {routes}
-                            </Switch>
+                            </Routes>
                         </Router>
                     </React.Suspense>
                 </div>
