@@ -88,7 +88,8 @@ pipeline {
                     script {
                         notifyAfterFailure()
                     }
-                }cleanup {
+                }
+                cleanup {
                     script {
                         sh "sudo rm -rf ${WORKSPACE}/{*,.*} || true"
                     }
