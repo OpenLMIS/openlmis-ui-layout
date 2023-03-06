@@ -3,6 +3,12 @@ $font-size-openlmis-header-title: $font-size-extra-large !default;
 body > header {
     border: 0px;
     padding: 0px;
+
+    @media screen and (max-width: $res-md) {
+        position: sticky;
+        top: 0;
+    }
+
     > * {
         width: 100%;
         margin: 0px;
