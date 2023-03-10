@@ -1,9 +1,3 @@
-5.2.3-WIP
-==================
-Improvements:
-* [OLMIS-7660](https://openlmis.atlassian.net/browse/OLMIS-7660): Add sticky position to header in mobile app.
-
-
 5.2.2 / 2022-10-07
 ==================
 
