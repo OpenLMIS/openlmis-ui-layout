@@ -45,6 +45,7 @@
     </head>
     <body class="no-js" onLoad="removeNoJS()">
         <div style="display: none;" id="rtlLanguagesDiv">@@SUPPORTED_RTL_LANGUAGES</div>
+        <div style="display: none;" id="defaultLanguageDiv">@@DEFAULT_LANGUAGE</div>
         <div class="loading-view">@@APPLICATION_LOADING_MESSAGE</div>
         <header class="header" ui-view="header"></header>
         <div ui-view></div>
@@ -56,10 +57,18 @@
             // This script is responsible for changing the page orientation based on the selected language.
             // If language is in the supportedRTLLanguages array located in config.json file.
             // Then dir will be changed to 'rtl'.
+
+            function getCurrentLanguage() {
+                // If there is no language in local storage get the default language value
+                const defaultLanguageDiv = document.getElementById('defaultLanguageDiv');
+                return localStorage.getItem('openlmis.current_locale') ?
+                    localStorage.getItem('openlmis.current_locale') : defaultLanguageDiv.innerText;
+            }
+
             function setPageDirection() {
                 const rtlLanguagesDiv = document.getElementById('rtlLanguagesDiv');
                 const rtlLanguages = rtlLanguagesDiv.innerText.split(',');
-                const currentLanguage = localStorage.getItem('openlmis.current_locale');
+                const currentLanguage = getCurrentLanguage();
                 const pageDirection = currentLanguage && rtlLanguages.includes(currentLanguage) ?
                     'rtl' : 'ltr';
                 document.documentElement.setAttribute('dir', pageDirection);
