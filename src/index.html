@@ -60,14 +60,13 @@
 
             function getCurrentLanguage() {
                 // If there is no language in local storage get the default language value
-                const defaultLanguageDiv = document.getElementById('defaultLanguageDiv');
+                const defaultLanguage = '@@DEFAULT_LANGUAGE';
                 return localStorage.getItem('openlmis.current_locale') ?
-                    localStorage.getItem('openlmis.current_locale') : defaultLanguageDiv.innerText;
+                    localStorage.getItem('openlmis.current_locale') : defaultLanguage;
             }
 
             function setPageDirection() {
-                const rtlLanguagesDiv = document.getElementById('rtlLanguagesDiv');
-                const rtlLanguages = rtlLanguagesDiv.innerText.split(',');
+                const rtlLanguages = '@@SUPPORTED_RTL_LANGUAGES';
                 const currentLanguage = getCurrentLanguage();
                 const pageDirection = currentLanguage && rtlLanguages.includes(currentLanguage) ?
                     'rtl' : 'ltr';
