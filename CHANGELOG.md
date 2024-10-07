@@ -2,6 +2,7 @@
 ==================
 Bug fixes:
 * [OLMIS-7772](https://openlmis.atlassian.net/browse/OLMIS-7772): Fix issues with new Chrome popover functionality
+* [OLMIS-7998](https://openlmis.atlassian.net/browse/OLMIS-7998): Added Superset address to Content-Security-Policy header
 
 5.2.3 / 2023-04-05
 ==================
