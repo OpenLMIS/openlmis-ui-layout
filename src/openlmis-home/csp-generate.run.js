@@ -34,10 +34,10 @@
             }
 
             var cspHeader = 'default-src \'self\' \'unsafe-inline\' ' + SUPERSET_URL + ';\n' +
-                              'img-src \'self\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
-                              'script-src \'self\' \'unsafe-inline\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
-                              'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + SUPERSET_URL + ';\n' +
-                              'frame-src \'self\'' + SUPERSET_URL + ';';
+                'img-src \'self\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
+                'script-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' \'unsafe-inline\' \'unsafe-eval\';\n' +
+                'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + SUPERSET_URL + ';\n' +
+                'frame-src \'self\'' + SUPERSET_URL + ';';
 
             return cspHeader;
         }
