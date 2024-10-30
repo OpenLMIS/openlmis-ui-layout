@@ -28,22 +28,16 @@
         function getCSPTag() {
             var GOOGLE_ANALYTICS_URL = 'www.google-analytics.com';
             var SUPERSET_URL = '${SUPERSET_URL}';
-            console.log('SUPERSET_URL 1 with ${} notation: ' + SUPERSET_URL);
 
             if (SUPERSET_URL.substr(0, 2) === '${') {
-                SUPERSET_URL = '@@SUPERSET_URL';
-                console.log('SUPERSET_URL 2 with @@ notation: ' + SUPERSET_URL);
-                if (SUPERSET_URL.substr(0, 2) === '@@') {
-                    SUPERSET_URL = '';
-                    console.log('SUPERSET_URL not found');
-                }
+                SUPERSET_URL = '';
             }
 
-            var cspHeader = 'default-src \'self\' \'unsafe-inline\' ' + SUPERSET_URL + ';\n' +
+            var cspHeader = 'default-src \'self\' ' + SUPERSET_URL + ' \'unsafe-inline\';\n' +
                 'img-src \'self\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
                 'script-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' \'unsafe-inline\' \'unsafe-eval\';\n' +
                 'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + SUPERSET_URL + ';\n' +
-                'frame-src \'self\'' + SUPERSET_URL + ';';
+                'frame-src \'self\' ' + SUPERSET_URL + ';';
 
             return cspHeader;
         }
