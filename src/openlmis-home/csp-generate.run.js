@@ -27,10 +27,16 @@
 
         function getCSPTag() {
             var GOOGLE_ANALYTICS_URL = 'www.google-analytics.com';
-            var SUPERSET_URL = '@@SUPERSET_URL';
+            var SUPERSET_URL = '${SUPERSET_URL}';
+            console.log('SUPERSET_URL 1 with ${} notation: ' + SUPERSET_URL);
 
-            if (SUPERSET_URL.substr(0, 2) === '@@' || SUPERSET_URL.substr(0, 1) === '/') {
-                SUPERSET_URL = '';
+            if (SUPERSET_URL.substr(0, 2) === '${') {
+                SUPERSET_URL = '@@SUPERSET_URL';
+                console.log('SUPERSET_URL 2 with @@ notation: ' + SUPERSET_URL);
+                if (SUPERSET_URL.substr(0, 2) === '@@') {
+                    SUPERSET_URL = '';
+                    console.log('SUPERSET_URL not found');
+                }
             }
 
             var cspHeader = 'default-src \'self\' \'unsafe-inline\' ' + SUPERSET_URL + ';\n' +
