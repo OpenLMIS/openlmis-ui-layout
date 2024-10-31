@@ -1,3 +1,12 @@
+5.2.6 / wip
+==================
+* [OIS-22](https://openlmis.atlassian.net/browse/OIS-22): Implemented automatic page direction change, after switching language to the RTL based.
+* [OIS-24](https://openlmis.atlassian.net/browse/OIS-24): Adjusted all components styles to support RTL
+* [OIS-50](https://openlmis.atlassian.net/browse/OIS-50): Added security headers to the index.html file
+
+5.2.5 / 2023-11-07
+==================
+
 5.2.4 / 2023-06-26
 ==================
 Bug fixes:
