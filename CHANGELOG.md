@@ -1,4 +1,4 @@
-5.2.6 / wip
+5.2.6 / 2024-10-31
 ==================
 * [OIS-22](https://openlmis.atlassian.net/browse/OIS-22): Implemented automatic page direction change, after switching language to the RTL based.
 * [OIS-24](https://openlmis.atlassian.net/browse/OIS-24): Adjusted all components styles to support RTL
