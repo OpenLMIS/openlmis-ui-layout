@@ -11,12 +11,13 @@ body > header {
 
 .openlmis-header {
   align-items: flex-end;
-  background: linear-gradient(
-    to top,
-    $light-gray 0%,
-    lighten($light-gray, 40%) 80%,
-    $white 100%
-  );
+  // background: linear-gradient(
+  //   to top,
+  //   $light-gray 0%,
+  //   lighten($light-gray, 40%) 80%,
+  //   $white 100%
+  // );
+  background-color: green;
   display: flex;
   flex-wrap: nowrap;
   padding: 1em 2em;
