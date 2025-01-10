@@ -24,20 +24,51 @@
     run.$inject = [];
 
     function run() {
+        var GOOGLE_ANALYTICS_URL = 'www.google-analytics.com';
+        var SUPERSET_URL = '${SUPERSET_URL}';
 
-        function getCSPTag() {
-            var GOOGLE_ANALYTICS_URL = 'www.google-analytics.com';
-            var SUPERSET_URL = '${SUPERSET_URL}';
+        // Get external domains from the environment variable.
+        // If the environment variable is a placeholder, return an empty array.
+        // Otherwise, return the list of domains.
+        function getExternalDomains() {
+            var envDomains = '${EXTERNAL_DOMAINS}';
 
-            if (SUPERSET_URL.substr(0, 2) === '${') {
-                SUPERSET_URL = '';
+            var validDomains = ensureValidEnvVariable(envDomains);
+
+            var externalDomains = validDomains
+                .split(',')
+                .map((domain) => domain.trim())
+                .filter((domain) => domain);
+
+            if (ensureValidEnvVariable(SUPERSET_URL)) {
+                externalDomains.push(SUPERSET_URL.trim());
             }
 
-            var cspHeader = 'default-src \'self\' ' + SUPERSET_URL + ' \'unsafe-inline\';\n' +
+            return externalDomains;
+        }
+
+        // Check if the environment variable is a placeholder.
+        // If so return an empty string, otherwise return the value.
+        function ensureValidEnvVariable(envVariable) {
+            if (envVariable.substr(0, 2) === '${') {
+                return '';
+            }
+
+            return envVariable;
+        }
+
+        // Generate the Content Security Policy header.
+        // This header will allow scripts and styles from the current domain and external domains.
+        function getCSPTag() {
+            var externalDomains = getExternalDomains();
+            var joinedDomains = externalDomains.join(' ');
+
+            var cspHeader =
+                'default-src \'self\' ' + joinedDomains + ' \'unsafe-inline\';\n' +
                 'img-src \'self\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
                 'script-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' \'unsafe-inline\' \'unsafe-eval\';\n' +
-                'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + SUPERSET_URL + ';\n' +
-                'frame-src \'self\' ' + SUPERSET_URL + ';';
+                'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + joinedDomains + ';\n' +
+                'frame-src \'self\' ' + joinedDomains + ';';
 
             return cspHeader;
         }
@@ -49,6 +80,7 @@
             metaTag.setAttribute('content', cspContent);
             document.head.appendChild(metaTag);
         }
+
         addCSPTag();
     }
 
