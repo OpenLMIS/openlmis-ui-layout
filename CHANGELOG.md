@@ -1,5 +1,7 @@
-5.2.7-SNAPSHOT / WIP
+5.2.7 / 2025-01-13
 ==================
+Improvements:
+* [SELV3-793](https://openlmis.atlassian.net/browse/SELV3-793): Use EXTERNAL_DOMAINS env variable and dynamically include domains in csp
 
 5.2.6 / 2024-10-31
 ==================
