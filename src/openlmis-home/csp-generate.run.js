@@ -66,7 +66,8 @@
             var cspHeader =
                 'default-src \'self\' ' + joinedDomains + ' \'unsafe-inline\';\n' +
                 'img-src \'self\' ' + GOOGLE_ANALYTICS_URL + ';\n' +
-                'script-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' \'unsafe-inline\' \'unsafe-eval\';\n' +
+                'script-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' +
+                joinedDomains + ' \'unsafe-inline\' \'unsafe-eval\';\n' +
                 'connect-src \'self\' ' + GOOGLE_ANALYTICS_URL + ' ' + joinedDomains + ';\n' +
                 'frame-src \'self\' ' + joinedDomains + ';';
 
