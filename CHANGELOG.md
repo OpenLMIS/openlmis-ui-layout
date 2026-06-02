@@ -4,6 +4,7 @@ Upcoming Version (WIP)
 
 Bug fixes:
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Fix language picker dropdown on mobile device
+* [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Raise header z-index above sticky content
 
 
 5.2.10 / 2026-02-05
