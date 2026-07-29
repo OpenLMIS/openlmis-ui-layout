@@ -7,6 +7,10 @@ Bug fixes:
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Raise header z-index above sticky content
 
 
+Improvements:
+* SonarCloud now receives JS unit-test coverage (lcov) so the quality gate reflects real coverage on new code.
+* Feed sonar.projectVersion from project.properties so SonarCloud's New Code baseline tracks releases.
+
 5.2.10 / 2026-02-05
 =================
 Improvements:
