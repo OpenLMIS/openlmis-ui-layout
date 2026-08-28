@@ -5,6 +5,7 @@ Upcoming Version (WIP)
 Bug fixes:
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Fix language picker dropdown on mobile device
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Raise header z-index above sticky content
+* [MALAWISUP-7386](https://openlmis.atlassian.net/browse/MALAWISUP-7386): Allow `data:` URIs in the CSP img-src directive, so images inlined by the build (url-loader `limit: 8192`) are no longer blocked.
 
 
 Improvements:
