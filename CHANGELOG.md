@@ -5,6 +5,8 @@ Upcoming Version (WIP)
 Bug fixes:
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Fix language picker dropdown on mobile device
 * [OLMIS-8220](https://openlmis.atlassian.net/browse/OLMIS-8220): Raise header z-index above sticky content
+* [OLMIS-8294](https://openlmis.atlassian.net/browse/OLMIS-8294): Pass sonar.projectVersion to the SonarCloud scanner through its args instead of appending it to sonar-project.properties during the build, so a missing trailing newline can no longer glue it onto the lcov report-path line and drop coverage to 0%.
+* [MW-1449](https://openlmis.atlassian.net/browse/MW-1449): Allow external domains in the CSP `script-src` directive, so embedded Superset dashboards load.
 * [MALAWISUP-7386](https://openlmis.atlassian.net/browse/MALAWISUP-7386): Allow `data:` URIs in the CSP img-src directive, so images inlined by the build (url-loader `limit: 8192`) are no longer blocked.
 
 
@@ -12,9 +14,6 @@ Improvements:
 * [OLMIS-8298](https://openlmis.atlassian.net/browse/OLMIS-8298): Specs written next to the React components (`*.spec.jsx`) now run in the karma suite and count as tests in SonarCloud, so the `.jsx` sources they exercise report real coverage.
 * SonarCloud now receives JS unit-test coverage (lcov) so the quality gate reflects real coverage on new code.
 * Feed sonar.projectVersion from project.properties so SonarCloud's New Code baseline tracks releases.
-
-Bug fixes:
-* [OLMIS-8294](https://openlmis.atlassian.net/browse/OLMIS-8294): Pass sonar.projectVersion to the SonarCloud scanner through its args instead of appending it to sonar-project.properties during the build, so a missing trailing newline can no longer glue it onto the lcov report-path line and drop coverage to 0%.
 
 5.2.10 / 2026-02-05
 =================
