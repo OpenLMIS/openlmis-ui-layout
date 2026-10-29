@@ -1,6 +1,9 @@
 5.3.0-SNAPSHOT (WIP)
 ==================
 
+Features:
+* Add a Switch To New UI button to the header, shown when the `NEW_UI_PATH` environment variable is set.
+
 5.2.11 / 2026-09-28
 ==================
 
