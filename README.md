@@ -71,6 +71,11 @@ the UI module.
 > docker-compose build image
 ```
 
+### Switch To New UI
+Set the `NEW_UI_PATH` environment variable (for example `/v2/`) on the UI container to show a
+Switch To New UI button in the header that opens that path. The button is hidden when the
+variable is not set or empty.
+
 ### Internationalization (i18n)
 Transifex has been integrated into the development and build process. In order to sync with the project's resources in Transifex, you must provide values for the following keys: TRANSIFEX_USER, TRANSIFEX_PASSWORD.
 
