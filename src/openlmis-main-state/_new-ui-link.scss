@@ -1,0 +1,14 @@
+header > .navbar a.openlmis-new-ui-link {
+  color: $text-color;
+  white-space: nowrap;
+  &:hover,
+  &:focus {
+    color: $text-color;
+    text-decoration: none;
+  }
+}
+
+header > .navbar .navbar-new-ui {
+  display: block;
+  margin: 10px;
+}
