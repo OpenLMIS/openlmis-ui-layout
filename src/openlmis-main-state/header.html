@@ -4,7 +4,7 @@
     <div class="navbar-right-group">
         <openlmis-logout class="navbar-right"></openlmis-logout>
         <openlmis-locale class="navbar-right locale-container"></openlmis-locale>
-        <openlmis-new-ui-link class="navbar-right"></openlmis-new-ui-link>
+        <a class="btn openlmis-new-ui-link navbar-right" href="${NEW_UI_PATH}" ng-if="'${NEW_UI_PATH}' && '${NEW_UI_PATH}'.charAt(0) !== '$'">{{'openlmisMainState.switchToNewUi' | message}}</a>
     </div>
 </div>
 
@@ -22,7 +22,7 @@
 
         <div class="collapse navbar-collapse" id="navbarToggler">
             <openlmis-navigation root-state="openlmis" class="nav navbar-nav"></openlmis-navigation>
-            <openlmis-new-ui-link class="navbar-new-ui"></openlmis-new-ui-link>
+            <a class="btn openlmis-new-ui-link navbar-new-ui" href="${NEW_UI_PATH}" ng-if="'${NEW_UI_PATH}' && '${NEW_UI_PATH}'.charAt(0) !== '$'">{{'openlmisMainState.switchToNewUi' | message}}</a>
         </div>
     </nav>
 </div>
